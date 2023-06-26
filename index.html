@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Today Only - It's the first day of the rest of your life. </title>
+</head>
+
+<body>
+  <div id="app">
+    <header id="header" class="header">
+      <span class="title">Today Only</span>
+      <a class="notion" href="#popup">
+        <button>!</button>
+      </a>
+    </header>
+
+    <main class="main">
+      <div id="wrapper" class="wrapper">
+        <div class="date"></div>
+        <div class="todo">
+          <div class="todo-input">
+            <input type="text" class="input" placeholder="create a new task here">
+            <button class="add-btn"></button>
+          </div>
+          <div class="todo-list"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Principles</h2>
+      <p><em>1.</em> First Thing First: you always get one most important thing.</p>
+      <p><em>2.</em> Break Down the Whole: make every step achievable & consistent with your goals.</p>
+      <p><em>3.</em> What's Next: each task finished, you must specify what comes next.</p>
+      <p><em>4.</em>Stand on the shoulders of giants: research who's done it before.</p>
+      <p><em>5.</em>Seek Feedbacks: record yourself, tap into social media or generate output.</p>
+      <a href="#"><button></button></a>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
