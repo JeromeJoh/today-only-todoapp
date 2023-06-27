@@ -1,5 +1,5 @@
-import todoView from "./template";
-import { addTodo, removeTodo, changeCompleted } from "./todoEvent";
+import todoItem from "./template";
+import { renderList, addTodo, removeTodo, changeCompleted } from "./todoEvent";
 
 export interface ITodo{
   id: number;
@@ -14,7 +14,12 @@ class TodoList {
 
   constructor(oTodoList: HTMLElement) {
     this.oTodoList = oTodoList;
-    // alert(this.greeting);
+    this.renderList(oTodoList);
+  }
+
+  @renderList
+  private renderList(oTodoList: HTMLElement) {
+    
   }
 
   public static create(oTodoList: HTMLElement) {
@@ -25,11 +30,7 @@ class TodoList {
 
   @addTodo
   public addItem(todo: ITodo) {
-    const oItem: HTMLElement = document.createElement('div');
-    oItem.className = 'todo-item';
-    oItem.innerHTML = todoView(todo);
-
-    this.oTodoList.appendChild(oItem);
+    this.oTodoList.appendChild(todoItem(todo));
   }
 
   @removeTodo

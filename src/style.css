@@ -117,6 +117,7 @@ button {
   padding: 2rem;
   font-size: 1.2rem;
   line-height: 1.5rem;
+  text-align: center;
   color: var(--main-color);
   background-color: white;
   border-radius: 1rem;
@@ -327,4 +328,8 @@ button {
   width: 100%;
   border-bottom: 1px solid var(--gray-color);
   transition: .2s;
+}
+
+.empty-tip {
+  color: var(--main-color);
 }

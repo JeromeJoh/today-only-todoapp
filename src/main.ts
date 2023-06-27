@@ -27,7 +27,7 @@ const month: string[] = [
 ]
 
 ;((doc: Document) => {
-
+  
   const oInput: HTMLInputElement = doc.querySelector('.input');
   const oAddBtn: HTMLElement = doc.querySelector('.add-btn');
   const oTodoList: HTMLElement = doc.querySelector('.todo-list');
