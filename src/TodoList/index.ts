@@ -17,16 +17,17 @@ class TodoList {
     this.renderList(oTodoList);
   }
 
-  @renderList
-  private renderList(oTodoList: HTMLElement) {
-    
-  }
-
   public static create(oTodoList: HTMLElement) {
     if(!TodoList.instance) TodoList.instance = new TodoList(oTodoList);
 
     return TodoList.instance;
   }
+
+  @renderList
+  private renderList(oTodoList: HTMLElement) {
+    if(!oTodoList) return;
+  }
+
 
   @addTodo
   public addItem(todo: ITodo) {

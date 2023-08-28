@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Pacifico&display=swap');
+
 :root {
   font-family: 'Outfit', cursive;
   line-height: 1.5;
@@ -14,6 +15,7 @@
   --text-color: rgb(100, 100, 105);
   --black-color: rgb(104, 104, 109);
   --gray-color: rgb(208, 208, 208);
+  --red-color: rgb(220 38 38);
 }
 
 body {
@@ -28,7 +30,6 @@ body {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  /* text-align: center; */
 }
 
 button {
@@ -36,6 +37,11 @@ button {
   background-color: transparent;
   border: none;
   border-radius: 100%;
+}
+
+@keyframes slideup {
+  from { opacity: 0; transform: translateY(5%) }
+  to { opacity: 1; transform: none }
 }
 
 /* ===================================
@@ -186,6 +192,8 @@ button {
   margin: 0 auto;
   padding: 2rem;
   border-radius: 1.6rem;
+  animation-name: slideup;
+  animation-duration: 1s;
 }
 
 .main .wrapper {
@@ -291,11 +299,19 @@ button {
   width: 1.6rem;
   border: none;
   background-color: rgb(246, 246, 246);
+  opacity: 0;
+  transition: opacity .15s;
+}
+
+.todo-item:hover .remove-btn {
+  opacity: 1;
 }
 
 .todo-item .remove-btn:hover {
   background-color: var(--gray-color);
 }
+
+
 
 .todo-item .remove-btn::before {
   content: '';

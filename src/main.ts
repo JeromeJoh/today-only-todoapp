@@ -1,7 +1,6 @@
-import './style.css'
 import TodoList from "./TodoList";
 
-const weekday: string[] = [
+enum weekday {
   'Sunday',
   'Monday',
   'Tuesday',
@@ -9,9 +8,9 @@ const weekday: string[] = [
   'Thursday',
   'Friday',
   'Saturday'
-]
+}
 
-const month: string[] = [
+enum month {
   'Jan',
   'Feb',
   'Mar',
@@ -24,7 +23,7 @@ const month: string[] = [
   'Oct',
   'Nov',
   'Dec'
-]
+}
 
 ;((doc: Document) => {
   
@@ -40,9 +39,9 @@ const month: string[] = [
   }
 
   function displayDate() {
-    const oDate: HTMLElement = doc.querySelector('.date');
-    const date: Date = new Date();
-    oDate.innerText = `${ weekday[date.getDay()]}, ${ date.getDate() + ' ' + month[date.getMonth()] }`;
+    const oDateTip: HTMLElement = doc.querySelector('.date');
+    const today: Date = new Date();
+    oDateTip.innerText = `${ weekday[today.getDay()]}, ${ today.getDate() + ' ' + month[today.getMonth()] }`;
   }
 
   function bindEvent() {
