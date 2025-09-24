@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+COMMIT_MSG_FILE=$1
+
 if ! grep -qE "^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+" "$COMMIT_MSG_FILE"; then
   echo "Error: Commit message does not follow Conventional Commits format."
   exit 1
