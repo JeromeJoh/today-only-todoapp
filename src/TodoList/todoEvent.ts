@@ -1,5 +1,5 @@
-import { ITodo } from ".";
-import todoItem, { emptyTip } from "./template";
+import { ITodo } from '.';
+import todoItem, { emptyTip } from './template';
 
 let todoData: ITodo[];
 let oTodoWrapper: HTMLElement;
@@ -22,7 +22,7 @@ export function renderList(
 
     oTodoWrapper = oTodoList;
 
-    if(todoData.length === 0) {
+    if (todoData.length === 0) {
       oTodoList.innerHTML = emptyTipString;
       return;
     }
@@ -46,14 +46,14 @@ export function addTodo(
     );
 
     if (_item) {
-      alert("请勿重复创建任务");
+      alert('请勿重复创建任务');
       return;
     }
 
     todoData.push(todo);
     saveToLocal();
-    
-    if(todoData.length === 1) oTodoWrapper.innerHTML = '';
+
+    if (todoData.length === 1) oTodoWrapper.innerHTML = '';
 
     _origin.call(this, todo);
   };
@@ -70,7 +70,7 @@ export function removeTodo(
     todoData = todoData.filter((todo) => todo.id !== id);
     saveToLocal();
 
-    if(todoData.length === 0) oTodoWrapper.innerHTML = emptyTipString;
+    if (todoData.length === 0) oTodoWrapper.innerHTML = emptyTipString;
 
     _origin.call(this, id);
   };
