@@ -1,4 +1,4 @@
-import TodoList from "./TodoList";
+import TodoList from './TodoList'
 
 enum weekday {
   'Sunday',
@@ -7,7 +7,7 @@ enum weekday {
   'Wednseday',
   'Thursday',
   'Friday',
-  'Saturday'
+  'Saturday',
 }
 
 enum month {
@@ -22,68 +22,68 @@ enum month {
   'Sep',
   'Oct',
   'Nov',
-  'Dec'
+  'Dec',
 }
 
 ;((doc: Document) => {
-  
-  const oInput: HTMLInputElement = doc.querySelector('.input');
-  const oAddBtn: HTMLElement = doc.querySelector('.add-btn');
-  const oTodoList: HTMLElement = doc.querySelector('.todo-list');
+  const oInput: HTMLInputElement = doc.querySelector('.input')
+  const oAddBtn: HTMLElement = doc.querySelector('.add-btn')
+  const oTodoList: HTMLElement = doc.querySelector('.todo-list')
 
-  const todoList = TodoList.create(oTodoList);
+  const todoList = TodoList.create(oTodoList)
 
   const init = () => {
-    displayDate();
-    bindEvent();
+    displayDate()
+    bindEvent()
   }
 
   function displayDate() {
-    const oDateTip: HTMLElement = doc.querySelector('.date');
-    const today: Date = new Date();
-    oDateTip.innerText = `${ weekday[today.getDay()]}, ${ today.getDate() + ' ' + month[today.getMonth()] }`;
+    const oDateTip: HTMLElement = doc.querySelector('.date')
+    const today: Date = new Date()
+    oDateTip.innerText = `${weekday[today.getDay()]}, ${
+      today.getDate() + ' ' + month[today.getMonth()]
+    }`
   }
 
   function bindEvent() {
-    oAddBtn.addEventListener('click', handleAddBtnClick, false);
-    oTodoList.addEventListener('click', handleListClick, false);
+    oAddBtn.addEventListener('click', handleAddBtnClick, false)
+    oTodoList.addEventListener('click', handleListClick, false)
   }
 
   function handleAddBtnClick() {
-    const val: string = oInput.value.trim();
+    const val: string = oInput.value.trim()
 
-    if(!val.length) return;
+    if (!val.length) return
 
     todoList.addItem({
       id: Date.now(),
       content: val,
-      completed: false
+      completed: false,
     })
 
-    oInput.value = '';
+    oInput.value = ''
   }
 
   function handleListClick(e: MouseEvent) {
-    const tar = e.target as HTMLElement;
-    const tagName = tar.tagName.toLowerCase();
-    const className: string = tar.className;
+    const tar = e.target as HTMLElement
+    const tagName = tar.tagName.toLowerCase()
+    const className: string = tar.className
 
-    if(tagName === 'button') {
-      const id: number = parseInt(tar.dataset.id);
+    if (tagName === 'button') {
+      const id: number = parseInt(tar.dataset.id)
 
-      switch(className) {
+      switch (className) {
         case 'remove-btn':
-          todoList.removeItem(id);
-          break;
+          todoList.removeItem(id)
+          break
         case 'checkbox':
-          todoList.toggleCompleted(id);
-          break;
+          todoList.toggleCompleted(id)
+          break
         default:
-          break;
+          break
       }
     }
   }
 
-  init();
-
-})(document);
+  init()
+})(document)

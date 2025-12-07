@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap');
 
 :root {
   font-family: 'Outfit', cursive;
@@ -20,7 +21,7 @@
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 384px;
   min-height: 90vh;
   background-color: var(--main-color);
   color: var(--black-color);
@@ -71,17 +72,20 @@ button {
   transition: .2s;
 }
 
-.header button:hover {
-  transform: scale(1.1);
-}
-
 .header .title {
   font-size: 2rem;
   margin: 0 1rem;
+  font-family: 'Ballet';
 }
 
 .header .notion {
   display: inline-block;
+  font-weight: light;
+  transition: all .15s;
+}
+
+.notion:active {
+  scale: 0.95;
 }
 
 .notion:target .popup {
