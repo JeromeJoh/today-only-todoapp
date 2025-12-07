@@ -30,6 +30,8 @@ jobs:
       - name: Build
         run: yarn build
 
-      # ---- (Optional) Run Tests ----
-      # - name: Test
-      #   run: yarn test
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
